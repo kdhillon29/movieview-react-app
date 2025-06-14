@@ -15,11 +15,11 @@ const Hero = () => {
       <div className="movie__background">
         <figure className="movie__background--wrapper">
           {/* <Navbar /> */}
-          <img
+          {/* <img
             src="assets/moviebackground.jpg"
             alt=""
             className="movie__background--img"
-          />
+          /> */}
           <div className="movie__background--text">
             <h1 className="movie__background--title">
               Ticket<span className="textcolor">+</span>

@@ -24,23 +24,29 @@ const MoviePage = () => {
         </h3>
       </Link>
 
-      <div className=" container-item">
-        {loading || error ? (
-          <MovieDetailSkelton />
-        ) : (
-          <>
-            <div className="img-left-side">
-              <img src={movie?.Poster} alt={movie?.Title} />
-            </div>
-            <div className="detail-right-side">
+      {loading || error ? (
+        <MovieDetailSkelton />
+      ) : (
+        <div className="container-item">
+          <div className="img-left-side">
+            <img
+              className="img-left-side--img"
+              src={movie?.Poster}
+              alt={movie?.Title}
+            />
+          </div>
+          <div className="detail-right-side">
+            <div>
               <h1>{movie?.Title}</h1>
               <span>{movie?.Released}</span>
-              <p>{movie?.Plot}</p>
-              <button disabled>Watch</button>
             </div>
-          </>
-        )}
-      </div>
+            <p>{movie?.Plot}</p>
+            <button style={{ width: "100%", margin: "24px 0px" }} disabled>
+              Watch
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

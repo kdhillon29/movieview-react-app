@@ -45,7 +45,7 @@ const SearchPage = () => {
       </Link>
 
       <div
-        style={{ marginTop: "50px", width: "80%", margin: "20px auto" }}
+        style={{ marginTop: "50px", width: "100%", margin: "20px auto" }}
         className=""
       >
         <div className="movie__input--wrapper form__submit">
@@ -79,13 +79,12 @@ const SearchPage = () => {
         <div
           style={{
             display: "flex",
-            width: "80%",
-            margin: " auto",
-            padding: "12px 24px",
-            justifyContent: "center",
-            alignItems: "center",
+            width: "100%",
+
+            justifyContent: "start",
+            alignItems: "start",
             flexWrap: "wrap",
-            gap: "12px",
+            gap: "18px",
           }}
         >
           {new Array(6).fill(0).map((_, index) => (

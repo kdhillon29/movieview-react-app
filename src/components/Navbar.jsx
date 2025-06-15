@@ -34,19 +34,6 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="nav__right">
-          <Link to="/contact" className="nav__link">
-            <i
-              style={{
-                display: "flex",
-                alignItems: "center",
-                padding: "12px",
-                marginTop: "4px",
-                marginRight: "20px",
-              }}
-              className="fa-solid fa-envelope nav__link"
-              aria-hidden="true"
-            ></i>
-          </Link>
           <div className="nav__input--wrapper">
             <input
               type="text"
@@ -67,6 +54,19 @@ const Navbar = () => {
               aria-hidden="true"
             ></i>
           </div>
+          <Link to="/contact" className="nav__link">
+            <i
+              style={{
+                display: "flex",
+                alignItems: "center",
+                padding: "12px",
+                marginTop: "4px",
+                marginRight: "2px",
+              }}
+              className="fa-solid fa-envelope nav__link"
+              aria-hidden="true"
+            ></i>
+          </Link>
           {/* <i className="fa-solid fa-gear nav__settings" aria-hidden="true"></i> */}
         </div>
       </div>

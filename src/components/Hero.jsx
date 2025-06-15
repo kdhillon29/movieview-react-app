@@ -1,13 +1,20 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
-
-const Hero = () => {
+import { useNavigate } from "react-router-dom";
+const Hero = ({ setSearchValue }) => {
   const [searchResult, setSearchResult] = useState([]);
+  const navigate = useNavigate();
 
-  const searchBarClick = () => {
-    setTimeout(() => {
-      console.log("searchBarClick");
-    }, 100);
+  const handleSearchBarClick = () => {
+    if (!searchResult) alert("Please enter a search term");
+    navigate(`/search?searchValue=${searchResult}`);
+    setSearchValue(searchResult);
+  };
+
+  const searchBarEnter = (e) => {
+    if (e.key === "Enter" && window.document.hasFocus()) {
+      handleSearchBarClick();
+    }
   };
 
   return (
@@ -37,11 +44,11 @@ const Hero = () => {
                   placeholder="Find a movie"
                   value={searchResult}
                   onChange={(e) => setSearchResult(e.target.value)}
-                  //   onKeyUp="searchBarEnter(event)"
+                  onKeyUp={(e) => searchBarEnter(e)}
                 />
                 <i
                   className="fa-solid fa-magnifying-glass movie__search"
-                  onClick={searchBarClick}
+                  onClick={handleSearchBarClick}
                   aria-hidden="true"
                 ></i>
               </div>

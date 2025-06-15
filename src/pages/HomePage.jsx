@@ -4,7 +4,7 @@ import MoviesList from "../components/MoviesList";
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="relative">
       <Hero />
       <MoviesList />
     </div>

@@ -1,19 +1,22 @@
 import React, { useRef, useState, useEffect } from "react";
 import useDebounce from "../hooks/useDebounce";
-import { Link } from "react-router-dom";
-const Navbar = ({ setSearchValue }) => {
+import { Link, useNavigate } from "react-router-dom";
+const Navbar = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const debouncedSearchTerm = useDebounce(searchTerm, 500); // 500ms delay/
+  const debouncedSearchTerm = useDebounce(searchTerm, 1000); // 500ms delay/
   const searchRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    setSearchValue(debouncedSearchTerm);
+    navigate(`/search?searchValue=${searchTerm}`);
   }, [debouncedSearchTerm]);
 
   const searchActive = () => {
-    setTimeout(() => {
-      searchRef.current.focus();
-    }, 100);
+    searchRef.current.focus();
+    // if (searchTerm) {
+    //   setSearchTerm("");
+    // }
+    // navigate(`/search?searchValue=${searchTerm}`);
   };
 
   return (
@@ -41,6 +44,11 @@ const Navbar = ({ setSearchValue }) => {
               className="nav__input"
               placeholder="Find a movie"
               ref={searchRef}
+              onKeyUp={(e) => {
+                if (e.key === "Enter" && window.document.hasFocus()) {
+                  searchActive();
+                }
+              }}
             />
             <i
               className="fa-solid fa-magnifying-glass nav__search"

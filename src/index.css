@@ -440,9 +440,9 @@ a {
   justify-content: space-around;
   align-items: center;
   gap: 30px;
-  margin-top: 100px;
+  margin-top: 30px;
   font-size: 12px;
-  padding: 12px 6px;
+  padding: 18px 12px;
   color: #fff;
   background-color: darkslategray;
   @media (max-width: 550px) {

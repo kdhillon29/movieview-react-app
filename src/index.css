@@ -14,7 +14,8 @@
 }
 
 body {
-  background-color: #1e1e1e;
+  background-color: darkslategray;
+  filter: grayscale(0.7);
   overflow-x: hidden;
 }
 
@@ -292,7 +293,8 @@ a {
 .movies__list {
   margin-top: 20px;
   width: 90%;
-  background-color: #1e1e1e;
+  /* background-color: #1e1e1e; */
+  box-shadow: 0px 0px 8px transparent;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -584,8 +586,9 @@ a {
   justify-content: space-between;
   align-items: flex-start;
   padding: 12px 24px;
-  gap: 60px;
+  gap: 30px;
   color: white;
+  overflow: hidden;
   @media (max-width: 550px) {
     flex-direction: column;
     justify-content: center;
@@ -594,13 +597,13 @@ a {
     height: auto;
     margin: 10px auto;
     gap: 1rem;
-    padding: 30px 20px;
+    padding: 10px 2px;
   }
   /* background-color: #6e6969; */
 }
 .img-left-side {
-  width: 80%;
-  height: 350px;
+  width: 100%;
+  height: 100%;
 }
 .img-left-side--img {
   border-radius: 10px;
@@ -610,7 +613,8 @@ a {
   object-fit: cover;
   @media (max-width: 550px) {
     width: 100vw;
-    height: 30vh;
+    height: 40vh;
+    padding: 0px;
   }
 }
 .detail-right-side {
@@ -620,7 +624,7 @@ a {
   justify-content: space-between;
   align-items: space-between;
   padding: 12px 24px;
-  gap: 60px;
+  gap: 20px;
   line-height: 1.5;
   word-spacing: 2px;
   @media (max-width: 550px) {
@@ -635,12 +639,19 @@ a {
   }
 }
 .detail-right-side > h1 {
-  font-size: 24px;
+  font-size: 20px;
+}
+.detail-right-side > span {
+  font-size: 14px;
+  padding: 4px 8px;
+  background-color: #e2462b;
 }
 .detail-right-side > p {
   font-size: 16px;
+  text-align: justify;
   line-height: 1.5;
   word-spacing: 2px;
+  padding: 4px 8px;
 }
 .detail-right-side > button {
   padding: 5px 10px;
@@ -693,14 +704,17 @@ button:hover {
 }
 
 .img-left-side-skelton {
-  width: 40%;
+  width: 50%;
   height: 100%;
-  background-color: lightslategray;
 }
 .movie-img-skelton {
   width: 100%;
   height: 350px;
-  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border: transparent;
+  background-color: lightslategray;
+
   animation: waves 1s infinite reverse ease-in;
   @media (max-width: 550px) {
     width: 100%;
@@ -711,7 +725,7 @@ button:hover {
 .detail-right-side-skelton {
   flex: 1;
   display: flex;
-  width: 60%;
+  width: 50%;
   flex-direction: column;
   gap: 1.2rem;
 }
@@ -747,7 +761,7 @@ button:hover {
   background-color: lightslategray;
   border-radius: 6px;
   border: none;
-  animation: waves 0.5s infinite reverse ease-in;
+  animation: waves 1s infinite reverse ease-in;
 }
 
 @keyframes waves {

@@ -19,7 +19,10 @@ const MoviePage = () => {
   return (
     <div className="container">
       <Link onClick={() => navigate(-1)} className="link__home">
-        <h3 style={{ paddingTop: "40px" }} className="link__home--text">
+        <h3
+          style={{ paddingTop: "40px", fontSize: "16px" }}
+          className="link__home--text"
+        >
           <i className="fa-solid fa-arrow-left" aria-hidden="true"></i> Back
         </h3>
       </Link>
@@ -36,7 +39,14 @@ const MoviePage = () => {
             />
           </div>
           <div className="detail-right-side">
-            <div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                gap: "12px",
+              }}
+            >
               <h1>{movie?.Title}</h1>
               <span>{movie?.Released}</span>
             </div>

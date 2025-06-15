@@ -79,9 +79,10 @@ const SearchPage = () => {
         <div
           style={{
             display: "flex",
-            width: "100%",
-
-            justifyContent: "start",
+            width: "80%",
+            margin: " auto",
+            padding: "12px 24px",
+            justifyContent: "center",
             alignItems: "center",
             flexWrap: "wrap",
             gap: "12px",

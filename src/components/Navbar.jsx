@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
+import useDebounce from "../hooks/useDebounce";
+import { Link } from "react-router-dom";
+const Navbar = ({ setSearchValue }) => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const debouncedSearchTerm = useDebounce(searchTerm, 500); // 500ms delay/
+  const searchRef = useRef(null);
 
-const Navbar = () => {
-  const [searchResult, setSearchResult] = useState([]);
+  useEffect(() => {
+    setSearchValue(debouncedSearchTerm);
+  }, [debouncedSearchTerm]);
 
   const searchActive = () => {
     setTimeout(() => {
-      console.log("searchActive");
+      searchRef.current.focus();
     }, 100);
   };
 
@@ -13,24 +20,27 @@ const Navbar = () => {
     <nav>
       <div className="nav__content">
         <div className="nav__left">
-          <figure className="nav__logo--wrapper">
-            <img src="assets/movielogo.png" alt="" className="nav__logo" />
-          </figure>
-          <a href="#home" className="nav__link">
+          <Link to="/">
+            <figure className="nav__logo--wrapper">
+              <img src="/movielogo.png" alt="" className="nav__logo" />
+            </figure>
+          </Link>
+          <Link to="/" className="nav__link">
             Home
-          </a>
-          <a href="" className="nav__link">
+          </Link>
+          <Link to="/" className="nav__link">
             Contact
-          </a>
+          </Link>
         </div>
         <div className="nav__right">
           <div className="nav__input--wrapper">
             <input
               type="text"
-              value={searchResult}
-              onChange={(e) => setSearchResult(e.target.value)}
+              //   value={searchValue}
+              onChange={(e) => setSearchTerm(e.target.value)}
               className="nav__input"
               placeholder="Find a movie"
+              ref={searchRef}
             />
             <i
               className="fa-solid fa-magnifying-glass nav__search"

@@ -8,6 +8,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    if (!searchTerm) return;
     navigate(`/search?searchValue=${searchTerm}`);
   }, [debouncedSearchTerm]);
 

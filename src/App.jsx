@@ -12,14 +12,20 @@ function App() {
   return (
     <Router>
       <Navbar />
-
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/movie/:movieId" element={<MovieDetailPage />} />
-        <Route path="/search" element={<SearchPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-      </Routes>
-
+      <div
+        style={{
+          height: "100vh",
+          overflowY: "hidden",
+          overflowX: "hidden",
+        }}
+      >
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/movie/:movieId" element={<MovieDetailPage />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </div>
       <Footer />
     </Router>
   );

@@ -135,7 +135,7 @@ const ContactPage = () => {
                   cursor: loading ? "not-allowed" : "pointer",
                   // color: loading ? "gray" : "green",
                   border: loading ? "1px gray solid" : "1px transparent solid",
-                  backgroundColor: loading ? "gray" : "#003554",
+                  backgroundColor: loading ? "gray" : "#118ab2",
                   boxShadow: loading
                     ? "0 0 4px 1px rgba(0, 0, 0, 0.1)"
                     : "none",

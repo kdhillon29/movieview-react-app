@@ -56,7 +56,7 @@ const MoviePage = () => {
               style={{
                 width: "100%",
                 margin: "28px auto",
-                backgroundColor: "#003554",
+                backgroundColor: "#118ab2",
                 opacity: 0.8,
                 color: "white",
               }}

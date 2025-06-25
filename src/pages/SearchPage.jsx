@@ -26,9 +26,10 @@ const SearchPage = () => {
   console.log("error", error);
   console.log("loading", loading);
   const handleSearch = () => {
+    if (!searchInput) return;
     // searchParams.set("searchValue", searchInput);
-    setSearchInput("");
     navigate(`/search?searchValue=${searchInput}`);
+    setSearchInput("");
   };
   const searchBarEnter = (e) => {
     if (e.key === "Enter" && window.document.hasFocus()) {
@@ -38,26 +39,16 @@ const SearchPage = () => {
   return (
     <div className="relative container">
       <Link to="/" className="link__home">
-        <h3 style={{ padding: "12px 8px" }}>
+        <h3 style={{ padding: "12px 10px" }}>
           <i className="fa-solid fa-arrow-left" aria-hidden="true"></i>
           Back
         </h3>
       </Link>
 
-      <div
-        style={{
-          marginTop: "20px",
-          width: "80%",
-          // border: "1px solid white",
-          // backgroundColor: "var(--secondary-color)",
-          margin: "20px auto",
-        }}
-        className=""
-      >
+      <div>
         <div className="movie__input--wrapper form__submit">
           <input
             type="text"
-            style={{ width: "100%", position: "relative" }}
             className="movie__input"
             placeholder="Find a movie"
             value={searchInput}
@@ -71,7 +62,11 @@ const SearchPage = () => {
           ></i>
         </div>
       </div>
-
+      {loading && (
+        <p style={{ marginBottom: "28px", textAlign: "center" }}>
+          Searching for: {searchValue}
+        </p>
+      )}
       {movies && !movies.Search?.length && !loading && (
         <div
           className="container"

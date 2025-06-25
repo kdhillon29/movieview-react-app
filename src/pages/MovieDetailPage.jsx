@@ -20,7 +20,7 @@ const MoviePage = () => {
     <div className="container">
       <Link onClick={() => navigate(-1)} className="link__home">
         <h3
-          style={{ paddingTop: "40px", fontSize: "16px" }}
+          style={{ padding: "12px 10px", fontSize: "16px" }}
           className="link__home--text"
         >
           <i className="fa-solid fa-arrow-left" aria-hidden="true"></i> Back
@@ -44,7 +44,8 @@ const MoviePage = () => {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
-                gap: "12px",
+                alignItems: "space-between",
+                gap: "24px",
               }}
             >
               <h1>{movie?.Title}</h1>
@@ -53,10 +54,10 @@ const MoviePage = () => {
             <p>{movie?.Plot}</p>
             <button
               style={{
-                width: "100%",
-                margin: "24px 0px",
+                width: "90%",
+                margin: "28px auto",
                 backgroundColor: "crimson",
-                opacity: 0.5,
+                opacity: 0.8,
                 color: "white",
               }}
               disabled

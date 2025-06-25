@@ -62,6 +62,7 @@ const Navbar = () => {
                 padding: "12px",
                 marginTop: "4px",
                 marginRight: "2px",
+                fontSize: "24px",
               }}
               className="fa-solid fa-envelope nav__link"
               aria-hidden="true"

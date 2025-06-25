@@ -10,7 +10,7 @@ import posterTest6 from "../assets/postertest6.jpg";
 const MoviesList = ({ movies, searchValue }) => {
   const initialMoviesData = [
     {
-      Title: "Guardians of The Galaxy Vol. 2",
+      Title: "Guardians of Galaxy",
       Poster: posterTest,
       length: "136m",
       rating: "4.5",
@@ -55,6 +55,7 @@ const MoviesList = ({ movies, searchValue }) => {
       length: "256m",
       rating: "4.1",
       language: "English",
+      imdbID: "tt10954984",
     },
   ];
 

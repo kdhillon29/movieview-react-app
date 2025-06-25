@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
+
 const Hero = ({ setSearchValue }) => {
-  const [searchResult, setSearchResult] = useState([]);
+  const [searchResult, setSearchResult] = useState("");
   const navigate = useNavigate();
 
   const handleSearchBarClick = () => {
-    if (!searchResult) alert("Please enter a search term");
+    if (!searchResult) {
+      alert("Please enter a search term");
+      return;
+    }
     navigate(`/search?searchValue=${searchResult}`);
     setSearchValue(searchResult);
   };

@@ -60,34 +60,21 @@ const ContactPage = () => {
   return (
     <>
       {/* Success dialog */}
-      {status && (
-        <div
-          style={{
-            position: "fixed",
-            top: "50px",
-            right: "50px",
-            zIndex: "200",
-            backgroundColor: "white",
-            padding: "20px",
-            borderRadius: "8px",
-            transform: "translateX(200%)",
-            transition: "200ms ease",
-          }}
-          className="success"
-        >
+      {
+        <div className="success">
           <i className="fa-regular fa-circle-check success__icon"></i>
           <div className="success__text">
             <span className="success__text__title">Message sent!</span>
             <p className="success__text__para">
               {status}
-              Your message has been received. get back to you soon!
+              Your message has been received.Our team will contact you soon!
             </p>
           </div>
         </div>
-      )}
+      }
 
       <section id="contact" className="contact">
-        <div style={{ padding: "12px 18px" }} className="container">
+        <div className="container">
           <div className="row contact__row">
             <div className="contact__description">
               <h2 className="contact__title">Contact</h2>

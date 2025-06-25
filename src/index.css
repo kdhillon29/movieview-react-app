@@ -5,7 +5,7 @@
   /* background-color: darkslategray;
    */
   /* background-color: #121212; */
-  --background-color: #2d3142;
+  --background-color: #233d4d;
   --secondary-color: #4f5d75;
   --primary-text: #ffffff;
   --secondary-text: #a22c29;
@@ -157,7 +157,7 @@ a {
   max-width: 100%;
   overflow: hidden;
   position: relative;
-  /* filter: grayscale(0.4); */
+  filter: grayscale(0.2);
   @media (max-width: 550px) {
     height: 40vh;
     width: 100vw;
@@ -172,18 +172,20 @@ a {
 .movie__background--text {
   position: absolute;
   top: 50%;
+  padding: 18px 12px;
 
   left: 50%;
-  width: 80%;
-  margin: 0 auto;
+  width: 100%;
+  height: 100%;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  justify-content: center;
+
   /* color: rgb(255, 255, 255); */
   color: var(--secondary-text);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   /* background-color: var(--background-color); */
   font-weight: 600;
   font-size: 20px;
@@ -216,17 +218,28 @@ a {
 
 .movie__input--wrapper {
   position: relative;
+  width: 90%;
+  margin: 0 auto;
+  padding: 12px 16px;
+
+  /* background-color: #a22c29; */
 }
 
 .movie__input {
-  padding: 24px 60px 24px 30px;
+  padding: 24px 18px;
+
   border-radius: 40px;
   background-color: transparent;
   color: white;
   border: 2px #fff solid;
   font-size: 32px;
   transition: 400ms ease;
-  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1080px;
+
+  /* background-color: aqua; */
+
   &::placeholder {
     color: var(--primary-text);
     font-size: 18px;
@@ -251,9 +264,10 @@ a {
 
 .movie__search {
   position: absolute;
+  z-index: 300;
   font-size: 24px;
   top: 50%;
-  right: 24px;
+  right: 5%;
   transform: translateY(-50%);
   transition: 400ms ease;
   cursor: pointer;
@@ -542,12 +556,6 @@ a {
   .nav__logo {
     width: 50px;
   }
-  /* .nav__search,
-  .nav__input,
-  .nav__logo--wrapper {
-    display: none;
-    visibility: hidden;
-  } */
 
   .nav__logo--wrapper {
     margin-right: 8px;
@@ -556,7 +564,7 @@ a {
 
 @media (max-width: 550px) {
   .movie {
-    width: 124px;
+    width: 35vw;
   }
   .movie__background--wrapper {
     height: 50vh;
@@ -577,7 +585,12 @@ a {
   }
 
   .movie__background--para {
-    font-size: 18px;
+    width: 100%;
+    font-size: 24px;
+    line-height: 1.5;
+    word-spacing: 2px;
+    padding: 0 12px;
+    color: var(--primary-text);
   }
 
   .movie__input {
@@ -621,7 +634,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 12px 24px;
+  padding: 12px 16px;
   gap: 30px;
   color: white;
   overflow: hidden;
@@ -632,8 +645,8 @@ a {
     width: 100%;
     height: auto;
     margin: 10px auto;
-    gap: 1rem;
-    padding: 10px 2px;
+    gap: 18px;
+    padding: 10px 0px;
   }
   /* background-color: #6e6969; */
 }
@@ -649,8 +662,9 @@ a {
   object-fit: cover;
   @media (max-width: 550px) {
     width: 100vw;
-    height: 40vh;
-    padding: 0px;
+    height: 35vh;
+    padding: 2px;
+    border-radius: 10px;
   }
 }
 .detail-right-side {
@@ -734,7 +748,7 @@ button:hover {
   @media (max-width: 550px) {
     flex-direction: column;
     gap: 1rem;
-    padding: 0px 20px;
+    padding: 0px 18px;
     width: 100vw;
   }
 }
@@ -751,10 +765,12 @@ button:hover {
   border: transparent;
   background-color: lightslategray;
 
-  animation: waves 1s infinite reverse ease-in 100ms;
+  animation: waves 2s infinite reverse ease-in 200ms;
   @media (max-width: 550px) {
-    width: 100%;
+    width: 80%;
+    margin: auto;
     height: 250px;
+    padding: 0px;
   }
 }
 
@@ -771,7 +787,7 @@ button:hover {
   height: 50px;
   background-color: lightslategray;
   border-radius: 6px;
-  animation: waves 1s infinite reverse ease-in 100ms;
+  animation: waves 2s infinite reverse ease-in 500ms;
 }
 
 .released-skeleton {
@@ -779,7 +795,7 @@ button:hover {
   height: 50px;
   background-color: lightslategray;
   border-radius: 6px;
-  animation: waves 1s infinite reverse ease-in 100ms;
+  animation: waves 2s infinite reverse ease-in 300ms;
 }
 
 .detail-skeleton {
@@ -787,25 +803,25 @@ button:hover {
   height: 160px;
   background-color: lightslategray;
   border-radius: 6px;
-  animation: waves 1s infinite reverse ease-in 100ms;
+  animation: waves 2s infinite reverse ease-in 300ms;
 }
 
 .submit {
-  width: 50%;
+  width: 80%;
   height: 80px;
-  margin: auto;
+  /* margin: 0 auto; */
   background-color: lightslategray;
   border-radius: 6px;
   border: none;
-  animation: waves 1s infinite reverse ease-in 100ms;
+  animation: waves 2s infinite reverse ease-in-out 300ms;
 }
 
 @keyframes waves {
   0% {
-    background-color: rgba(71, 68, 68, 0);
+    background-color: rgba(71, 68, 68, 0.2);
   }
   50% {
-    background-color: rgba(113, 109, 109, 0.6);
+    background-color: rgba(113, 109, 109, 0.4);
   }
   100% {
     background-color: rgba(113, 109, 109, 0.8);

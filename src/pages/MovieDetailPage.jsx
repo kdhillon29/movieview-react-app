@@ -54,7 +54,7 @@ const MoviePage = () => {
             <p>{movie?.Plot}</p>
             <button
               style={{
-                width: "90%",
+                width: "100%",
                 margin: "28px auto",
                 backgroundColor: "#003554",
                 opacity: 0.8,

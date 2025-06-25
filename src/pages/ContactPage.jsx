@@ -130,11 +130,12 @@ const ContactPage = () => {
               <button
                 type="submit"
                 style={{
+                  margin: "24px auto",
                   opacity: loading ? 0.5 : 1,
                   cursor: loading ? "not-allowed" : "pointer",
                   // color: loading ? "gray" : "green",
                   border: loading ? "1px gray solid" : "1px transparent solid",
-                  backgroundColor: loading ? "gray" : "crimson",
+                  backgroundColor: loading ? "gray" : "#003554",
                   boxShadow: loading
                     ? "0 0 4px 1px rgba(0, 0, 0, 0.1)"
                     : "none",
@@ -146,7 +147,7 @@ const ContactPage = () => {
                   <i className="fa-solid fa-spinner contact__form__loading__icon"></i>
                 )}
               </button>
-              {status && <p className="contact__status">{status}</p>}
+              {/* {status && <p className="contact__status">{status}</p>} */}
             </form>
           </div>
         </div>

@@ -10,6 +10,7 @@ const Navbar = () => {
   useEffect(() => {
     if (!searchTerm) return;
     navigate(`/search?searchValue=${searchTerm}`);
+    setSearchTerm("");
   }, [debouncedSearchTerm]);
 
   const searchActive = () => {
@@ -37,7 +38,7 @@ const Navbar = () => {
           <div className="nav__input--wrapper">
             <input
               type="text"
-              //   value={searchValue}
+              value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="nav__input"
               placeholder="Find a movie"

@@ -10,7 +10,7 @@
   justify-content: center;
   align-items: center;
   gap: 24px;
-  background-color: darkslategray;
+  background-color: var(--background-color);
   /* filter: grayscale(0.9); */
 }
 .contact__row {
@@ -60,7 +60,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: darkcyan;
+  background-color: var(--background-color);
   padding: 12px 18px;
   gap: 20px;
   width: 100%;
@@ -89,7 +89,7 @@
 
 .form__item__input {
   height: 36px;
-  background-color: lightcyan;
+  background-color: var(--primary-text);
 
   border: transparent solid;
   outline: none;
@@ -101,7 +101,7 @@
 
 .form__item__textarea {
   height: 96px;
-  background-color: lightcyan;
+  background-color: var(--primary-text);
   width: 100%;
   border: transparent solid;
   outline: none;
@@ -112,8 +112,8 @@
 }
 
 .contact__form__submit {
-  background-color: lightskyblue;
-  color: lightblue;
+  background-color: var(--background-color);
+  color: var(--primary-text);
   width: 90%;
   padding: 0 18px;
   height: 48px;
@@ -128,8 +128,8 @@
 
 .contact__form__submit:hover {
   background-color: transparent;
-  color: var(--col-primary);
-  border-color: var(--col-primary);
+  color: var(--primary-text);
+  border-color: var(--primary-text);
 }
 
 .success {
@@ -178,8 +178,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--col-primary);
-  color: white;
+  background-color: var(--background-color);
+  color: var(--primary-text);
   z-index: 20;
   display: flex;
   justify-content: center;
@@ -190,7 +190,10 @@
 .contact__form__loading__icon {
   animation: loadingSpinner 1000ms infinite;
 }
-
+.contact__status {
+  color: green;
+  background-color: var(--background-color);
+}
 @keyframes loadingSpinner {
   0% {
     rotate: 0;

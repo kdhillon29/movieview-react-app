@@ -145,8 +145,12 @@ const ContactPage = () => {
                 style={{
                   opacity: loading ? 0.5 : 1,
                   cursor: loading ? "not-allowed" : "pointer",
-                  color: loading ? "gray" : "green",
+                  // color: loading ? "gray" : "green",
                   border: loading ? "1px gray solid" : "1px transparent solid",
+                  backgroundColor: loading ? "gray" : "crimson",
+                  boxShadow: loading
+                    ? "0 0 4px 1px rgba(0, 0, 0, 0.1)"
+                    : "none",
                 }}
                 className="contact__form__submit"
               >

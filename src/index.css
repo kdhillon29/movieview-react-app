@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+:root {
+  /* primary-color: crimson; */
+  /* background-color: darkslategray;
+   */
+  /* background-color: #121212; */
+  --background-color: #2d3142;
+  --secondary-color: #4f5d75;
+  --primary-text: #ffffff;
+  --secondary-text: #a22c29;
+}
+
 /* Globals */
 * {
   margin: 0;
@@ -9,14 +20,14 @@
   scroll-behavior: smooth;
 }
 .textcolor {
-  color: crimson;
+  color: var(--primary-text);
   font-weight: 700;
 }
 
 body {
-  background-color: darkslategray;
-  filter: grayscale(0.7);
+  background-color: var(--background-color);
   overflow-x: hidden;
+  color: var(--primary-text);
 }
 
 a {
@@ -28,23 +39,24 @@ a {
 
 .nav__content {
   position: sticky;
-  top: 0px;
+  top: 0;
   left: 0;
   right: 0;
   transform: translateX(0%);
   /* background-color: rgba(30, 29, 29, 0.7); */
-  background-color: darkcyan;
-  opacity: 0.9;
-  box-shadow: 0 60px 50px 0 rgb(5, 5, 5, 0.45);
+  /* background-color: var(--secondary-color); */
+  opacity: 0.5;
+
+  box-shadow: 0 2px 5px 0 rgb(5, 5, 5, 0.45);
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
-  padding: 0 80px;
-  filter: grayscale(0.5);
+  height: 80px;
+  padding: 12px 80px;
+
   z-index: 10;
   @media (max-width: 550px) {
     padding: 0 40px;
@@ -81,7 +93,8 @@ a {
 }
 
 .nav__link:hover {
-  color: crimson;
+  scale: 1.02;
+  transition: scale 400ms ease;
   border-bottom-color: crimson;
   font-weight: 700;
 }
@@ -140,10 +153,11 @@ a {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.8;
+  /* opacity: 0.8; */
   max-width: 100%;
   overflow: hidden;
   position: relative;
+  /* filter: grayscale(0.4); */
   @media (max-width: 550px) {
     height: 40vh;
     width: 100vw;
@@ -158,16 +172,19 @@ a {
 .movie__background--text {
   position: absolute;
   top: 50%;
+
   left: 50%;
-  width: 50%;
+  width: 80%;
   margin: 0 auto;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  color: rgb(255, 255, 255);
-  background-color: rgba(0, 0, 0, 0.4);
+  /* color: rgb(255, 255, 255); */
+  color: var(--secondary-text);
+  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: var(--background-color); */
   font-weight: 600;
   font-size: 20px;
   width: 100%;
@@ -176,20 +193,20 @@ a {
 }
 
 .movie__background--title {
-  font-size: 60px;
+  font-size: 80px;
   font-weight: 900;
-  margin-top: 80px;
+  /* margin-top: 20px; */
   margin-bottom: 12px;
-  color: red;
+  color: var(--secondary-text);
 }
 
 .movie__background--para {
   font-size: 38px;
   font-weight: 700;
   margin-bottom: 40px;
-  width: 100%;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.4);
+  width: 60%;
+  color: var(--primary-text);
+  /* background-color: rgba(0, 0, 0, 0.4); */
   /* opacity: 0.5; */
 }
 
@@ -211,8 +228,8 @@ a {
   transition: 400ms ease;
   max-width: 100%;
   &::placeholder {
-    color: white;
-    font-size: 12px;
+    color: var(--primary-text);
+    font-size: 18px;
   }
   @media (max-width: 550px) {
     padding: 16px 30px 16px 12px;
@@ -304,7 +321,9 @@ a {
   box-shadow: 0px 0px 8px transparent;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
   position: relative;
 }
 
@@ -341,8 +360,8 @@ a {
 .movie {
   width: 198px;
   margin: 24px 8px;
-  background-color: #1e1e1e;
-  color: #1a1a1a;
+  /* background-color: var(--background-color); */
+  color: var(--primary-text);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 8px 12px 0px rgb(5, 5, 5, 0.45);
@@ -354,7 +373,7 @@ a {
 }
 
 .movie__img--wrapper {
-  background-color: #1e1e1e;
+  background-color: var(--background-color);
   width: 100%;
   max-height: 288px;
   overflow: hidden;
@@ -388,7 +407,7 @@ a {
   font-size: 14px;
   margin: 8px 0 24px 0;
   padding: 0 8px;
-  color: #fff;
+  color: var(--primary-text);
   text-align: center;
 }
 
@@ -408,7 +427,7 @@ a {
   justify-content: space-between;
   margin-bottom: 32px;
   padding: 0 8px;
-  color: #fff;
+  color: var(--primary-text);
 }
 
 .movie__info:first-child {
@@ -421,13 +440,13 @@ a {
 }
 
 .movie__info--icon {
-  color: #fff;
+  color: var(--primary-text);
 }
 
 .movie__info--title {
   position: absolute;
   text-align: left;
-  color: #fff;
+  color: var(--primary-text);
   font-size: 20px;
   top: 24px;
   left: 16px;
@@ -440,11 +459,12 @@ a {
   justify-content: space-around;
   align-items: center;
   gap: 30px;
-  margin-top: 100px;
+  /* margin-top: 100px; */
   font-size: 12px;
-  padding: 12px 6px;
-  color: #fff;
-  background-color: darkslategray;
+  padding: 24px 12px;
+  color: var(--primary-text);
+  background-color: var(--secondary-color);
+  opacity: 0.7;
   @media (max-width: 550px) {
     flex-direction: column;
     font-size: 12px;
@@ -731,7 +751,7 @@ button:hover {
   border: transparent;
   background-color: lightslategray;
 
-  animation: waves 1s infinite reverse ease-in;
+  animation: waves 1s infinite reverse ease-in 100ms;
   @media (max-width: 550px) {
     width: 100%;
     height: 250px;
@@ -751,7 +771,7 @@ button:hover {
   height: 50px;
   background-color: lightslategray;
   border-radius: 6px;
-  animation: waves 1s infinite reverse ease-in;
+  animation: waves 1s infinite reverse ease-in 100ms;
 }
 
 .released-skeleton {
@@ -759,7 +779,7 @@ button:hover {
   height: 50px;
   background-color: lightslategray;
   border-radius: 6px;
-  animation: waves 1s infinite reverse ease-in;
+  animation: waves 1s infinite reverse ease-in 100ms;
 }
 
 .detail-skeleton {
@@ -767,7 +787,7 @@ button:hover {
   height: 160px;
   background-color: lightslategray;
   border-radius: 6px;
-  animation: waves 1s infinite reverse ease-in;
+  animation: waves 1s infinite reverse ease-in 100ms;
 }
 
 .submit {
@@ -777,7 +797,7 @@ button:hover {
   background-color: lightslategray;
   border-radius: 6px;
   border: none;
-  animation: waves 1s infinite reverse ease-in;
+  animation: waves 1s infinite reverse ease-in 100ms;
 }
 
 @keyframes waves {

@@ -51,7 +51,16 @@ const MoviePage = () => {
               <span>{movie?.Released}</span>
             </div>
             <p>{movie?.Plot}</p>
-            <button style={{ width: "100%", margin: "24px 0px" }} disabled>
+            <button
+              style={{
+                width: "100%",
+                margin: "24px 0px",
+                backgroundColor: "crimson",
+                opacity: 0.5,
+                color: "white",
+              }}
+              disabled
+            >
               Watch
             </button>
           </div>

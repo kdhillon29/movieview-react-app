@@ -38,14 +38,20 @@ const SearchPage = () => {
   return (
     <div className="relative container">
       <Link to="/" className="link__home">
-        <h3 style={{ padding: "24px 12px" }}>
+        <h3 style={{ padding: "12px 8px" }}>
           <i className="fa-solid fa-arrow-left" aria-hidden="true"></i>
           Back
         </h3>
       </Link>
 
       <div
-        style={{ marginTop: "50px", width: "100%", margin: "20px auto" }}
+        style={{
+          marginTop: "20px",
+          width: "80%",
+          // border: "1px solid white",
+          // backgroundColor: "var(--secondary-color)",
+          margin: "20px auto",
+        }}
         className=""
       >
         <div className="movie__input--wrapper form__submit">
